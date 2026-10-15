@@ -9,7 +9,7 @@ let speed = 3;
 
 function setup(){
   createCanvas(400, 400);
-  bgColor = color(51, 17, 64);
+  bgColor = color(78, 84, 115);
   
 }
 function draw(){
@@ -33,7 +33,13 @@ function draw(){
   
   /* Circle */
   fill(255, 204, 0);
-  ellipse(x1, 180, 50, 50);
+  ellipse(x1, 90, 50, 50);
   
+  /* Star */
+  fill(230, 240, 242);
+  rect(x2, 180, 50, 50);
+  rect(x3, 190, 50, 50);
+  
+  /* triangle */
   
 }
