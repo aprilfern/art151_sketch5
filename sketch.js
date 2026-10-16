@@ -32,17 +32,15 @@ function draw(){
   }
   
   /* Circle */
-  fill(255, 204, 0);
+  fill(228, 200, 247);
   ellipse(x1, 90, 50, 50);
   
   /* Star */
   fill(230, 240, 242);
   rect(x2, 180, 50, 50);
   
-  rotate(45);
-  rect(x3, 190, 50, 50);
-  pop();
-  
   /* triangle */
+  fill(208, 247, 200);
+  triangle(x3, 270, x3 - 30, 320, x3 + 30, 320);
   
 }
