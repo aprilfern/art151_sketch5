@@ -10,7 +10,7 @@ let speed = 3;
 function setup(){
   createCanvas(400, 400);
   bgColor = color(78, 84, 115);
-  
+  angleMode(DEGREES);
 }
 function draw(){
   background(bgColor);
@@ -38,7 +38,10 @@ function draw(){
   /* Star */
   fill(230, 240, 242);
   rect(x2, 180, 50, 50);
+  
+  rotate(45);
   rect(x3, 190, 50, 50);
+  pop();
   
   /* triangle */
   
