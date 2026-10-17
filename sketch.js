@@ -13,6 +13,10 @@ let x3 = 0;
 
 let speed = 3;
 
+function preload(){
+  img = loadImage('media/orv.jpg');
+}
+
 function setup(){
   createCanvas(400, 400);
   bgColor = color(78, 84, 115);
@@ -20,6 +24,7 @@ function setup(){
 }
 function draw(){
   background(bgColor);
+  image(img, 100, 150, 200, 100);
   
   x1 += speed;
   x2 += speed;
@@ -67,11 +72,17 @@ function draw(){
   rect(0, 90, squareSize, squareSize);
   pop();
   
-  /* Transparency */
-  let triangleTrans = map(x3, 10, width, 50, 100);
+  /* Transparency opacity goes from 255 to 0 */
+  let triangleTrans = map(x3, 0, width / 2, 255, 0);
   
   /* Triangle */
-  fill(72, 28, 105);
+  fill(72, 28, 105, triangleTrans);
   triangle(x3, 270, x3 - 30, 320, x3 + 30, 320);
+  
+  /* Triangle morphs to Circle */
+  let circleTrans = map(x3 / width, 0.5, 1, 0, 255);
+  fill(72, 28, 105, circleTrans);
+  ellipse(x3, 300, 50, 50);
+  
   
 }
