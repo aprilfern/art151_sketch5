@@ -44,26 +44,34 @@ function draw(){
   let red = color(112, 20, 20);
   let kimDokja = lerpColor(white, red, x1/width);
   
+  /* Shrink Circle */
+  let circleSize = map(x1, 0, width, 50, 0);
+  
   /* Circle */
   fill(kimDokja);
-  ellipse(x1, 90, 50, 50);
+  ellipse(x1, 120, circleSize, circleSize);
   
   /* Yoo Joonghyuk Colors */
   let black = color(0, 0, 0);
   let gold = color(255, 215, 0);
   let joonghyuk = lerpColor(black, gold, x2/width);
   
-  /* Square */
-  fill(joonghyuk);
-  rect(x2, 190, 50, 50);
+  /* Grows Square */
+  let squareSize = map(x2, 0, width, 50, 100);
   
-  /* Han Sooyoung Colors */
-  let lightPurple = color(201, 174, 212);
-  let darkPurple = color(72, 28, 105);
-  let sooyoung = lerpColor(lightPurple, darkPurple, x3/width);
+  /* Square rotating and growing around Circle */
+  push();
+  translate(x2, 120);
+  rotate(frameCount / 15);
+  fill(joonghyuk);
+  rect(0, 90, squareSize, squareSize);
+  pop();
+  
+  /* Transparency */
+  let triangleTrans = map(x3, 10, width, 50, 100);
   
   /* Triangle */
-  fill(sooyoung);
+  fill(72, 28, 105);
   triangle(x3, 270, x3 - 30, 320, x3 + 30, 320);
   
 }
