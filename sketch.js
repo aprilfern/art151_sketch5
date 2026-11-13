@@ -13,14 +13,12 @@ let x3 = 0;
 
 let speed = 3;
 
-function preload(){
-  img = loadImage('media/orv.jpg');
-}
-
-function setup(){
+async function setup(){
   createCanvas(400, 400);
   bgColor = color(78, 84, 115);
   rectMode(CENTER);
+  
+  img = await loadImage('media/orv.jpg');
 }
 function draw(){
   background(bgColor);
